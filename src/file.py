@@ -4,7 +4,7 @@ from datetime import date
 
 
 def save_to_json(new_data):
-    filename = f"{date.today()}.json"
+    filename = f"days/{date.today()}.json"
     new_data = json.loads(new_data)
     if os.path.exists(filename):
         with open(filename, 'r') as file:

@@ -10,7 +10,7 @@ def get_data(text):
 
 def main():
     text = input()
-    print(get_data(text))
+    file.save_to_json(get_data(text))
 
 
 if __name__ == '__main__':
