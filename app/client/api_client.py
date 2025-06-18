@@ -3,7 +3,7 @@ import requests
 from app.storage import file_manager
 
 
-url = "http://127.0.0.1:8000/get_data"
+url = "http://192.168.31.49:8000/get_data"
 
 
 def get_data(text):
