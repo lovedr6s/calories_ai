@@ -6,8 +6,9 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
-    "fastapi[standard,standart]>=0.115.13",
+    "fastapi[standard]>=0.115.13",
     "openai>=1.88.0",
     "pytest>=8.4.0",
+    "pywebview>=5.4",
     "requests>=2.32.4",
 ]
