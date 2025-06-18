@@ -1,16 +1,10 @@
 import requests
-from src import file
-
-url = "http://127.0.0.1:8000/get_data"
-
-
-def get_data(text):
-    return requests.post(url, json={'text': text}).text
+from app.client import api_client
 
 
 def main():
     text = input()
-    file.save_to_json(get_data(text))
+    api_client.save(text)
 
 
 if __name__ == '__main__':

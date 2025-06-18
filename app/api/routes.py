@@ -2,7 +2,7 @@ import json
 from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 from pydantic import BaseModel
-from .macros import get_macros
+from ..services.macros import get_macros
 
 app = FastAPI()
 
