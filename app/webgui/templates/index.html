@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calories</title>
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="data">
+                <a href="#">&lt;-</a>
+                <p>{{ data }}</p>
+                <a href="#">-&gt;</a>
+            </div>
+            <form action="/save_data" method="post">
+                <div class="input_products">
+                    <input type="text" name="products">
+                </div>
+            </form>
+            <p style="display: flex; justify-content: center;">Kcal:</p>
+            <div class="macros">
+                <p>Carbs:</p>
+                <p>Proteins:</p>
+                <p>Fats:</p>
+            </div>
+            <div class="macros_container">
+                <table>
+                    <tr>
+                        <th>Food</th>
+                        <th>Kcal</th>
+                        <th>Carbs</th>
+                        <th>Proteins</th>
+                        <th>Fats</th>
+                    </tr>
+                    {% if macros %}
+                    {% for macro in macros %}
+                        <tr>
+                            <td>{{ macro['name'] }}</td>
+                            <td>{{ macro['kcal'] }}</td>
+                            <td>{{ macro['carbs'] }}</td>
+                            <td>{{ macro['proteins'] }}</td>
+                            <td>{{ macro['fats'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    {% endif %}
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

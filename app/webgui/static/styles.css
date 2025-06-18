@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    font-size: 16px; /* базовая единица */
+}
+
+.container {
+    max-width: 21.9rem;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.input_products {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.input_products input {
+    font-size: 20px;
+    width: 20rem;
+    height: 2rem;
+}
+
+.macros {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 50px;
+}
+
+.macros_container {
+    margin: 30px;
+    min-height: 200px;
+    border: 1px solid black;
+}
+
+.macros_container table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+.macros_container th {
+    border-right: 1px solid black;
+    text-align: center;
+}
+
+.macros_container td {
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.macros_container td:last-child,
+.macros_container th:last-child {
+    border-right: none;
+}

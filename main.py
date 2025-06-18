@@ -1,8 +1,6 @@
-import requests
 import webview
 import threading
 import uvicorn
-from app.client import api_client
 
 
 def run_gui():

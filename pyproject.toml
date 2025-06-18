@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "dotenv>=0.9.9",
     "fastapi[standard]>=0.115.13",
+    "jinja2>=3.1.6",
     "openai>=1.88.0",
     "pytest>=8.4.0",
     "pywebview>=5.4",
