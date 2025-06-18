@@ -11,7 +11,10 @@ def get_data(text):
 
 
 def save(text: str) -> None:
-    file_manager.save_to_json(get_data(text))
+    try:
+        file_manager.save_to_json(get_data(text))
+    except json.decoder.JSONDecodeError:
+        print('error')
 
 
 def load(data: str) -> json:
