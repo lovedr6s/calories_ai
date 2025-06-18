@@ -1,15 +1,17 @@
 import requests
-from src import macros
+from src import file
 
 url = "http://127.0.0.1:8000/get_data"
-payloads = {'text': ""}
+
+
+def get_data(text):
+    return requests.post(url, json={'text': text}).text
 
 
 def main():
     text = input()
-    response = requests.post(url, json={'text': text})
-    print(response.text)
-    #print(get_macros('150 грам риса курица жаренная в соевом соусе 100 гр'))
+    print(get_data(text))
+
 
 if __name__ == '__main__':
     main()

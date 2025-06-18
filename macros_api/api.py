@@ -14,19 +14,13 @@ class BigText(BaseModel):
 @app.post('/get_data', response_class=PlainTextResponse)
 def get_data(payload: BigText):
   text = payload.text
-  while True:
+  for repeat in range(5):
     try:
+        if repeat == 5:
+           return 'Error. Try to write other sentence'
         macros_data = get_macros(text)
         json.loads(macros_data)
         break
     except json.decoder.JSONDecodeError:
         print("Trying again..")
   return macros_data
-
-
-
-'''
-curl -X POST http://127.0.0.1:8000/get_data \
-  -H "Content-Type: application/json" \
-  -d '{"text": "hi"}'
-'''
