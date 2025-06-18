@@ -16,11 +16,13 @@
                     <input type="text" name="products">
                 </div>
             </form>
-            <p style="display: flex; justify-content: center;">Kcal:</p>
-            <div class="macros">
-                <p>Carbs:</p>
-                <p>Proteins:</p>
-                <p>Fats:</p>
+            <div class="total_container">
+                <p style="display: flex; justify-content: center;">Kcal: {{ total_macros['kcal'] }}</p>
+                <div class="macros">
+                    <p>Carbs: {{ total_macros['carbs'] }}</p>
+                    <p>Proteins: {{ total_macros['proteins'] }}</p>
+                    <p>Fats: {{ total_macros['fats'] }}</p>
+                </div>
             </div>
             <div class="macros_container">
                 <table>

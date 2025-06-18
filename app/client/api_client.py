@@ -16,3 +16,22 @@ def save(text: str) -> None:
 
 def load(data: str) -> json:
     return file_manager.load_from_json(data)
+
+
+def get_total_macros(data: str):
+    raw_data = file_manager.load_from_json(data)
+    output = {
+        'kcal': 0,
+        'carbs': 0,
+        'proteins': 0,
+        'fats': 0   
+    }
+    try:
+        for macro in raw_data:
+            output['kcal'] += int(macro['kcal'])
+            output['carbs'] += int(macro['carbs'])
+            output['proteins'] += int(macro['proteins'])
+            output['fats'] += int(macro['fats'])
+    except TypeError:
+        print('file empty')
+    return output

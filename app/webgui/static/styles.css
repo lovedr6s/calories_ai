@@ -66,3 +66,12 @@ html {
 .macros_container th:last-child {
     border-right: none;
 }
+
+.total_container {
+    border: 1px solid black;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 20px;
+    padding-bottom: 0;
+    padding-top: 0;
+}

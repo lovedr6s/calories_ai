@@ -9,5 +9,5 @@ def run_gui():
 
 if __name__ == "__main__":
     threading.Thread(target=run_gui, daemon=True).start()
-    webview.create_window("Lovedr6s", "http://127.0.0.1:5000", width=350, height=450, resizable=False)
+    webview.create_window("Lovedr6s", "http://127.0.0.1:5000", width=350, height=460, resizable=False)
     webview.start()

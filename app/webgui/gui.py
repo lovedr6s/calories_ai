@@ -13,7 +13,8 @@ templates = Jinja2Templates(directory='app/webgui/templates')
 @app.get("/", response_class=HTMLResponse)
 def index(request: Request):
     macros = api_client.load(date.today())
-    return templates.TemplateResponse('index.html', {"request": request, "data": date.today(), 'macros': macros})
+    total_macros = api_client.get_total_macros(date.today())
+    return templates.TemplateResponse('index.html', {"request": request, "data": date.today(), 'macros': macros, 'total_macros': total_macros})
 
 
 @app.post('/save_data')
