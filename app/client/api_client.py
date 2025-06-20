@@ -1,28 +1,32 @@
-import json
 import requests
-from app.storage import file_manager
-
-
-url = "http://192.168.31.49:8000/get_data"
-
-
-def get_data(text):
-    return requests.post(url, json={'text': text}).text
 
 
 def save(text: str) -> None:
-    try:
-        file_manager.save_to_json(get_data(text))
-    except json.decoder.JSONDecodeError:
-        print('error')
+    url = 'https://macrosapi-production.up.railway.app/save_data'
+    payload = {
+        'text': text,
+        "user_token": "1"
+    }
+    requests.post(url, json=payload)
 
 
-def load(data: str) -> json:
-    return file_manager.load_from_json(data)
+def load(data: str):
+    url = "https://macrosapi-production.up.railway.app/get_data"
+    headers = {
+        "user-token": "1"
+    }
+    params = {
+        "date": data
+    }
+
+    response = requests.get(url, headers=headers, params=params)
+    print(response.text)
+    return response.json()
+
 
 
 def get_total_macros(data: str):
-    raw_data = file_manager.load_from_json(data)
+    raw_data = load(data)
     output = {
         'kcal': 0,
         'carbs': 0,
